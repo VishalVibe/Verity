@@ -1,0 +1,339 @@
+[
+  {
+    "id": "001",
+    "domain": "history",
+    "question": "When was the Eiffel Tower built and how tall is it?",
+    "source": "The Eiffel Tower was constructed between 1887 and 1889 as the entrance arch for the 1889 World's Fair in Paris, held to celebrate the centennial of the French Revolution. Designed by engineer Gustave Eiffel's company, it stands 330 meters tall, including its antennas, and was the tallest man-made structure in the world until 1930. The tower is built from wrought iron and weighs approximately 10,100 tonnes.",
+    "answer": "The Eiffel Tower was built between 1887 and 1889 for the 1889 World's Fair in Paris. It stands 330 meters tall and was made of wrought iron.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "The Eiffel Tower was built between 1887 and 1889", "label": "supported"},
+      {"text": "It was built for the 1889 World's Fair in Paris", "label": "supported"},
+      {"text": "It stands 330 meters tall", "label": "supported"},
+      {"text": "It was made of wrought iron", "label": "supported"}
+    ]
+  },
+  {
+    "id": "002",
+    "domain": "history",
+    "question": "When was the Eiffel Tower built and how tall is it?",
+    "source": "The Eiffel Tower was constructed between 1887 and 1889 as the entrance arch for the 1889 World's Fair in Paris, held to celebrate the centennial of the French Revolution. Designed by engineer Gustave Eiffel's company, it stands 330 meters tall, including its antennas, and was the tallest man-made structure in the world until 1930. The tower is built from wrought iron and weighs approximately 10,100 tonnes.",
+    "answer": "The Eiffel Tower was built between 1887 and 1892 for the World's Fair. It stands 324 meters tall and was the tallest structure in the world until 1950.",
+    "hallucination_type": "fabricated_numbers",
+    "claims": [
+      {"text": "The Eiffel Tower was built between 1887 and 1892", "label": "contradicted", "evidence": "source says 1887 to 1889"},
+      {"text": "It was built for the World's Fair", "label": "supported"},
+      {"text": "It stands 324 meters tall", "label": "contradicted", "evidence": "source says 330 meters"},
+      {"text": "It was the tallest structure in the world until 1950", "label": "contradicted", "evidence": "source says until 1930"}
+    ]
+  },
+  {
+    "id": "003",
+    "domain": "science",
+    "question": "How does photosynthesis work?",
+    "source": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy into chemical energy. It occurs primarily in the chloroplasts of plant cells, where chlorophyll absorbs sunlight. The process uses carbon dioxide and water as inputs, producing glucose and oxygen as outputs. Photosynthesis consists of two main stages: the light-dependent reactions, which occur in the thylakoid membrane, and the light-independent reactions (Calvin cycle), which occur in the stroma.",
+    "answer": "Photosynthesis converts light energy into chemical energy in chloroplasts. Chlorophyll absorbs sunlight, and the process uses carbon dioxide and water to produce glucose and oxygen. It has two stages: light-dependent reactions in the thylakoid membrane and the Calvin cycle in the stroma.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "Photosynthesis converts light energy into chemical energy in chloroplasts", "label": "supported"},
+      {"text": "Chlorophyll absorbs sunlight", "label": "supported"},
+      {"text": "The process uses carbon dioxide and water to produce glucose and oxygen", "label": "supported"},
+      {"text": "It has two stages: light-dependent reactions in the thylakoid membrane and the Calvin cycle in the stroma", "label": "supported"}
+    ]
+  },
+  {
+    "id": "004",
+    "domain": "science",
+    "question": "How does photosynthesis work?",
+    "source": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy into chemical energy. It occurs primarily in the chloroplasts of plant cells, where chlorophyll absorbs sunlight. The process uses carbon dioxide and water as inputs, producing glucose and oxygen as outputs. Photosynthesis consists of two main stages: the light-dependent reactions, which occur in the thylakoid membrane, and the light-independent reactions (Calvin cycle), which occur in the stroma.",
+    "answer": "Photosynthesis converts light energy into chemical energy in the mitochondria. Chlorophyll absorbs sunlight and produces glucose and oxygen from carbon dioxide and nitrogen. This process is also how animals generate energy from food.",
+    "hallucination_type": "entity_substitution",
+    "claims": [
+      {"text": "Photosynthesis occurs in the mitochondria", "label": "contradicted", "evidence": "source says chloroplasts, not mitochondria"},
+      {"text": "Chlorophyll absorbs sunlight", "label": "supported"},
+      {"text": "Glucose and oxygen are produced from carbon dioxide and nitrogen", "label": "contradicted", "evidence": "source says water, not nitrogen"},
+      {"text": "This process is also how animals generate energy from food", "label": "unsupported", "evidence": "source does not mention animals at all"}
+    ]
+  },
+  {
+    "id": "005",
+    "domain": "company",
+    "question": "What does the company GreenLeaf Robotics do and when was it founded?",
+    "source": "GreenLeaf Robotics is a startup founded in 2019 in Austin, Texas, that builds autonomous robots for precision agriculture. Its flagship product, the FieldScout unit, uses computer vision to identify crop diseases and weeds, allowing farmers to apply pesticides only where needed. The company raised a $12 million Series A round in 2022 led by Greenfield Ventures. As of last year, GreenLeaf had deployed over 400 units across farms in the United States and Canada.",
+    "answer": "GreenLeaf Robotics, founded in 2019 in Austin, Texas, builds autonomous robots for precision agriculture. Its FieldScout product uses computer vision to detect crop diseases and weeds. The company raised $12 million in a Series A round in 2022.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "GreenLeaf Robotics was founded in 2019 in Austin, Texas", "label": "supported"},
+      {"text": "It builds autonomous robots for precision agriculture", "label": "supported"},
+      {"text": "FieldScout uses computer vision to detect crop diseases and weeds", "label": "supported"},
+      {"text": "The company raised $12 million in a Series A round in 2022", "label": "supported"}
+    ]
+  },
+  {
+    "id": "006",
+    "domain": "company",
+    "question": "What does the company GreenLeaf Robotics do and when was it founded?",
+    "source": "GreenLeaf Robotics is a startup founded in 2019 in Austin, Texas, that builds autonomous robots for precision agriculture. Its flagship product, the FieldScout unit, uses computer vision to identify crop diseases and weeds, allowing farmers to apply pesticides only where needed. The company raised a $12 million Series A round in 2022 led by Greenfield Ventures. As of last year, GreenLeaf had deployed over 400 units across farms in the United States and Canada.",
+    "answer": "GreenLeaf Robotics was founded in 2017 in Austin and builds drones for crop spraying. The company has raised over $50 million in funding and is backed by Sequoia Capital. It has deployed thousands of units worldwide, including in Europe and Asia.",
+    "hallucination_type": "mixed",
+    "claims": [
+      {"text": "GreenLeaf Robotics was founded in 2017", "label": "contradicted", "evidence": "source says 2019"},
+      {"text": "It builds drones for crop spraying", "label": "contradicted", "evidence": "source says ground robots using computer vision, not spraying drones"},
+      {"text": "The company has raised over $50 million in funding", "label": "contradicted", "evidence": "source says $12 million"},
+      {"text": "It is backed by Sequoia Capital", "label": "contradicted", "evidence": "source says Greenfield Ventures"},
+      {"text": "It has deployed thousands of units worldwide, including in Europe and Asia", "label": "contradicted", "evidence": "source says over 400 units in US and Canada only"}
+    ]
+  },
+  {
+    "id": "007",
+    "domain": "biography",
+    "question": "Who was Ada Lovelace and what is she known for?",
+    "source": "Ada Lovelace (1815-1852) was an English mathematician and writer, chiefly known for her work on Charles Babbage's proposed mechanical general-purpose computer, the Analytical Engine. She is often regarded as the first computer programmer because, in her notes on the Engine, she described an algorithm intended to be carried out by the machine, making it the first published algorithm specifically designed for implementation on a computer. She was the daughter of poet Lord Byron.",
+    "answer": "Ada Lovelace was an English mathematician known for her work on Charles Babbage's Analytical Engine. She is often considered the first computer programmer because she wrote an algorithm meant to be run on the machine. She was the daughter of Lord Byron.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "Ada Lovelace was an English mathematician known for her work on Babbage's Analytical Engine", "label": "supported"},
+      {"text": "She is often considered the first computer programmer", "label": "supported"},
+      {"text": "She wrote an algorithm meant to be run on the machine", "label": "supported"},
+      {"text": "She was the daughter of Lord Byron", "label": "supported"}
+    ]
+  },
+  {
+    "id": "008",
+    "domain": "biography",
+    "question": "Who was Ada Lovelace and what is she known for?",
+    "source": "Ada Lovelace (1815-1852) was an English mathematician and writer, chiefly known for her work on Charles Babbage's proposed mechanical general-purpose computer, the Analytical Engine. She is often regarded as the first computer programmer because, in her notes on the Engine, she described an algorithm intended to be carried out by the machine, making it the first published algorithm specifically designed for implementation on a computer. She was the daughter of poet Lord Byron.",
+    "answer": "Ada Lovelace was a 19th century American mathematician who built the first working computer alongside Charles Babbage. She personally constructed the Analytical Engine in her home laboratory and is celebrated as its co-inventor.",
+    "hallucination_type": "fabricated_elaboration",
+    "claims": [
+      {"text": "Ada Lovelace was American", "label": "contradicted", "evidence": "source says English"},
+      {"text": "She built the first working computer alongside Babbage", "label": "unsupported", "evidence": "source says the Engine was only proposed; nothing about a working build"},
+      {"text": "She personally constructed the Analytical Engine in her home laboratory", "label": "unsupported", "evidence": "no mention of construction or a home laboratory in source"},
+      {"text": "She is celebrated as co-inventor of the Analytical Engine", "label": "unsupported", "evidence": "source credits the design to Babbage; Lovelace is known for the algorithm/notes, not co-invention"}
+    ]
+  },
+  {
+    "id": "009",
+    "domain": "science",
+    "question": "What causes the seasons on Earth?",
+    "source": "Earth's seasons are caused by the tilt of its rotational axis, which is about 23.5 degrees relative to its orbital plane around the Sun. As Earth orbits the Sun over the course of a year, different hemispheres are tilted toward or away from the Sun at different times, changing the angle and intensity of sunlight they receive. This is the primary driver of seasonal temperature variation, not Earth's varying distance from the Sun, which changes only slightly over the year.",
+    "answer": "Seasons happen because Earth's distance from the Sun changes throughout the year. When Earth is closer to the Sun, it's summer, and when it's farther away, it's winter.",
+    "hallucination_type": "contradiction",
+    "claims": [
+      {"text": "Seasons happen because Earth's distance from the Sun changes throughout the year", "label": "contradicted", "evidence": "source explicitly says this is not the cause"},
+      {"text": "When Earth is closer to the Sun it's summer, and farther away it's winter", "label": "contradicted", "evidence": "source attributes seasons to axial tilt, not distance"}
+    ]
+  },
+  {
+    "id": "010",
+    "domain": "history",
+    "question": "What was the Treaty of Westphalia?",
+    "source": "The Peace of Westphalia refers to a series of treaties signed in 1648 that ended the Thirty Years' War in the Holy Roman Empire and the Eighty Years' War between Spain and the Dutch Republic. It is often credited with establishing the modern concept of state sovereignty, as it recognized the right of states to determine their own religious and political affairs without external interference. The treaties were signed in the cities of Osnabruck and Munster.",
+    "answer": "The Peace of Westphalia, signed in 1648, ended the Thirty Years' War and the Eighty Years' War. It is credited with establishing the modern concept of state sovereignty. The treaties were signed in Osnabruck and Munster.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "The Peace of Westphalia was signed in 1648", "label": "supported"},
+      {"text": "It ended the Thirty Years' War and the Eighty Years' War", "label": "supported"},
+      {"text": "It is credited with establishing the modern concept of state sovereignty", "label": "supported"},
+      {"text": "The treaties were signed in Osnabruck and Munster", "label": "supported"}
+    ]
+  },
+  {
+    "id": "011",
+    "domain": "history",
+    "question": "What was the Treaty of Westphalia?",
+    "source": "The Peace of Westphalia refers to a series of treaties signed in 1648 that ended the Thirty Years' War in the Holy Roman Empire and the Eighty Years' War between Spain and the Dutch Republic. It is often credited with establishing the modern concept of state sovereignty, as it recognized the right of states to determine their own religious and political affairs without external interference. The treaties were signed in the cities of Osnabruck and Munster.",
+    "answer": "The Peace of Westphalia was signed in 1648 and ended World War One in Europe. It established the United Nations and was signed in Paris.",
+    "hallucination_type": "entity_substitution",
+    "claims": [
+      {"text": "The Peace of Westphalia was signed in 1648", "label": "supported"},
+      {"text": "It ended World War One in Europe", "label": "contradicted", "evidence": "source says it ended the Thirty Years' War and Eighty Years' War, centuries before WWI"},
+      {"text": "It established the United Nations", "label": "unsupported", "evidence": "source does not mention the United Nations"},
+      {"text": "It was signed in Paris", "label": "contradicted", "evidence": "source says Osnabruck and Munster"}
+    ]
+  },
+  {
+    "id": "012",
+    "domain": "science",
+    "question": "What is CRISPR-Cas9 used for?",
+    "source": "CRISPR-Cas9 is a gene-editing technology that allows researchers to alter DNA sequences and modify gene function. It works by using a guide RNA to direct the Cas9 enzyme to a specific location in the genome, where it cuts the DNA. The cell's natural repair mechanisms then fix the cut, which can be used to disable a gene or, with a supplied template, insert a new sequence. It has applications in treating genetic diseases, agriculture, and basic biological research.",
+    "answer": "CRISPR-Cas9 is a gene-editing tool that uses a guide RNA to direct an enzyme to cut DNA at a specific spot, allowing genes to be disabled or new sequences inserted. It is used in treating genetic diseases, agriculture, and research.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "CRISPR-Cas9 uses a guide RNA to direct an enzyme to cut DNA at a specific spot", "label": "supported"},
+      {"text": "This allows genes to be disabled or new sequences inserted", "label": "supported"},
+      {"text": "It is used in treating genetic diseases, agriculture, and research", "label": "supported"}
+    ]
+  },
+  {
+    "id": "013",
+    "domain": "science",
+    "question": "What is CRISPR-Cas9 used for?",
+    "source": "CRISPR-Cas9 is a gene-editing technology that allows researchers to alter DNA sequences and modify gene function. It works by using a guide RNA to direct the Cas9 enzyme to a specific location in the genome, where it cuts the DNA. The cell's natural repair mechanisms then fix the cut, which can be used to disable a gene or, with a supplied template, insert a new sequence. It has applications in treating genetic diseases, agriculture, and basic biological research.",
+    "answer": "CRISPR-Cas9 is a gene-editing tool invented in 2015 by scientists at Harvard. It is exclusively used to clone animals and has been banned in most countries due to ethical concerns.",
+    "hallucination_type": "fabricated_elaboration",
+    "claims": [
+      {"text": "CRISPR-Cas9 was invented in 2015 by scientists at Harvard", "label": "unsupported", "evidence": "source gives no invention date or institution"},
+      {"text": "It is exclusively used to clone animals", "label": "contradicted", "evidence": "source lists genetic disease treatment, agriculture, and research as uses, not cloning"},
+      {"text": "It has been banned in most countries due to ethical concerns", "label": "unsupported", "evidence": "source makes no mention of legal status or bans"}
+    ]
+  },
+  {
+    "id": "014",
+    "domain": "company",
+    "question": "What pricing plans does CloudSync offer?",
+    "source": "CloudSync offers three pricing tiers. The Free tier includes 5GB of storage and basic file syncing across two devices. The Pro tier, priced at $9.99 per month, includes 1TB of storage, syncing across unlimited devices, and 30-day version history. The Business tier, priced at $19.99 per user per month, adds team folders, admin controls, and unlimited version history. All paid tiers include email support; phone support is available only on the Business tier.",
+    "answer": "CloudSync has three tiers: Free (5GB, two devices), Pro at $9.99/month (1TB, unlimited devices, 30-day version history), and Business at $19.99/user/month (team folders, admin controls, unlimited version history). Phone support is only available on Business.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "Free tier includes 5GB storage and syncing across two devices", "label": "supported"},
+      {"text": "Pro tier is $9.99/month with 1TB storage, unlimited devices, 30-day version history", "label": "supported"},
+      {"text": "Business tier is $19.99/user/month with team folders, admin controls, unlimited version history", "label": "supported"},
+      {"text": "Phone support is only available on Business", "label": "supported"}
+    ]
+  },
+  {
+    "id": "015",
+    "domain": "company",
+    "question": "What pricing plans does CloudSync offer?",
+    "source": "CloudSync offers three pricing tiers. The Free tier includes 5GB of storage and basic file syncing across two devices. The Pro tier, priced at $9.99 per month, includes 1TB of storage, syncing across unlimited devices, and 30-day version history. The Business tier, priced at $19.99 per user per month, adds team folders, admin controls, and unlimited version history. All paid tiers include email support; phone support is available only on the Business tier.",
+    "answer": "CloudSync's Free tier offers 50GB of storage. The Pro tier is $9.99/month with unlimited storage. All tiers, including Free, come with 24/7 phone support.",
+    "hallucination_type": "fabricated_numbers",
+    "claims": [
+      {"text": "Free tier offers 50GB of storage", "label": "contradicted", "evidence": "source says 5GB"},
+      {"text": "Pro tier includes unlimited storage", "label": "contradicted", "evidence": "source says 1TB, not unlimited"},
+      {"text": "All tiers, including Free, come with 24/7 phone support", "label": "contradicted", "evidence": "source says phone support is Business-only, and doesn't say 24/7"}
+    ]
+  },
+  {
+    "id": "016",
+    "domain": "biography",
+    "question": "What is Marie Curie known for?",
+    "source": "Marie Curie (1867-1934) was a Polish-French physicist and chemist known for her pioneering research on radioactivity, a term she coined. She was the first woman to win a Nobel Prize, the first person to win Nobel Prizes in two different sciences (Physics in 1903 and Chemistry in 1911), and discovered the elements polonium and radium. During World War I, she developed mobile radiography units, known as 'petites Curies,' to provide X-ray services to field hospitals.",
+    "answer": "Marie Curie was a Polish-French physicist and chemist who coined the term radioactivity and discovered polonium and radium. She was the first woman to win a Nobel Prize and the first person to win Nobel Prizes in two different sciences.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "Marie Curie coined the term radioactivity", "label": "supported"},
+      {"text": "She discovered polonium and radium", "label": "supported"},
+      {"text": "She was the first woman to win a Nobel Prize", "label": "supported"},
+      {"text": "She was the first person to win Nobel Prizes in two different sciences", "label": "supported"}
+    ]
+  },
+  {
+    "id": "017",
+    "domain": "biography",
+    "question": "What is Marie Curie known for?",
+    "source": "Marie Curie (1867-1934) was a Polish-French physicist and chemist known for her pioneering research on radioactivity, a term she coined. She was the first woman to win a Nobel Prize, the first person to win Nobel Prizes in two different sciences (Physics in 1903 and Chemistry in 1911), and discovered the elements polonium and radium. During World War I, she developed mobile radiography units, known as 'petites Curies,' to provide X-ray services to field hospitals.",
+    "answer": "Marie Curie was a French physicist who won three Nobel Prizes, all in Physics. She discovered radium, polonium, and uranium, and invented the X-ray machine during World War II.",
+    "hallucination_type": "mixed",
+    "claims": [
+      {"text": "Marie Curie was French", "label": "unsupported", "evidence": "source says Polish-French, omitting Polish is a partial mismatch but French alone is not directly contradicted; flagged for review"},
+      {"text": "She won three Nobel Prizes, all in Physics", "label": "contradicted", "evidence": "source says two prizes, in different sciences (Physics and Chemistry)"},
+      {"text": "She discovered radium, polonium, and uranium", "label": "contradicted", "evidence": "source only credits her with polonium and radium, not uranium"},
+      {"text": "She invented the X-ray machine during World War II", "label": "contradicted", "evidence": "source says she developed mobile radiography units during World War I, and did not invent the X-ray machine itself"}
+    ]
+  },
+  {
+    "id": "018",
+    "domain": "science",
+    "question": "How do vaccines work?",
+    "source": "Vaccines work by training the immune system to recognize and fight specific pathogens without causing the disease itself. They typically contain a weakened or inactivated form of a pathogen, or a piece of it such as a protein, which triggers an immune response. The immune system produces antibodies and memory cells in response. If the body later encounters the actual pathogen, the memory cells allow for a faster and stronger immune response, often preventing illness or reducing its severity.",
+    "answer": "Vaccines train the immune system to recognize pathogens by introducing a weakened or inactive form, or a piece of it, which triggers antibody and memory cell production. This allows a faster immune response upon future exposure to the actual pathogen.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "Vaccines train the immune system by introducing a weakened or inactive pathogen or a piece of it", "label": "supported"},
+      {"text": "This triggers antibody and memory cell production", "label": "supported"},
+      {"text": "This allows a faster immune response upon future exposure", "label": "supported"}
+    ]
+  },
+  {
+    "id": "019",
+    "domain": "science",
+    "question": "How do vaccines work?",
+    "source": "Vaccines work by training the immune system to recognize and fight specific pathogens without causing the disease itself. They typically contain a weakened or inactivated form of a pathogen, or a piece of it such as a protein, which triggers an immune response. The immune system produces antibodies and memory cells in response. If the body later encounters the actual pathogen, the memory cells allow for a faster and stronger immune response, often preventing illness or reducing its severity.",
+    "answer": "Vaccines work by directly killing pathogens in the bloodstream using antibiotics contained in the injection. They provide permanent, 100% immunity to the targeted disease immediately after injection.",
+    "hallucination_type": "contradiction",
+    "claims": [
+      {"text": "Vaccines directly kill pathogens using antibiotics", "label": "contradicted", "evidence": "source describes immune training via weakened/inactivated pathogens, not antibiotics killing pathogens"},
+      {"text": "They provide permanent, 100% immunity immediately after injection", "label": "unsupported", "evidence": "source says vaccines often prevent illness or reduce severity, not guaranteed 100% permanent immunity"}
+    ]
+  },
+  {
+    "id": "020",
+    "domain": "history",
+    "question": "What was the significance of the Rosetta Stone?",
+    "source": "The Rosetta Stone is a granodiorite stele inscribed with a decree issued in 196 BC in Memphis, Egypt, on behalf of King Ptolemy V. The decree appears in three scripts: Ancient Egyptian hieroglyphics, Demotic script, and Ancient Greek. Because scholars could already read Ancient Greek, the stone provided the key to deciphering Egyptian hieroglyphics, a script that had been unreadable for centuries. It was discovered in 1799 by French soldiers during Napoleon's Egyptian campaign and is now housed in the British Museum.",
+    "answer": "The Rosetta Stone, discovered in 1799 during Napoleon's Egyptian campaign, contains a decree in three scripts: hieroglyphics, Demotic, and Greek. Because scholars could read Greek, it allowed them to decipher Egyptian hieroglyphics.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "The Rosetta Stone was discovered in 1799 during Napoleon's Egyptian campaign", "label": "supported"},
+      {"text": "It contains a decree in three scripts: hieroglyphics, Demotic, and Greek", "label": "supported"},
+      {"text": "Because scholars could read Greek, it allowed them to decipher hieroglyphics", "label": "supported"}
+    ]
+  },
+  {
+    "id": "021",
+    "domain": "history",
+    "question": "What was the significance of the Rosetta Stone?",
+    "source": "The Rosetta Stone is a granodiorite stele inscribed with a decree issued in 196 BC in Memphis, Egypt, on behalf of King Ptolemy V. The decree appears in three scripts: Ancient Egyptian hieroglyphics, Demotic script, and Ancient Greek. Because scholars could already read Ancient Greek, the stone provided the key to deciphering Egyptian hieroglyphics, a script that had been unreadable for centuries. It was discovered in 1799 by French soldiers during Napoleon's Egyptian campaign and is now housed in the British Museum.",
+    "answer": "The Rosetta Stone was discovered in 1922 by British archaeologist Howard Carter inside Tutankhamun's tomb. It is written in four languages and is currently on display in the Louvre.",
+    "hallucination_type": "entity_substitution",
+    "claims": [
+      {"text": "The Rosetta Stone was discovered in 1922 by Howard Carter inside Tutankhamun's tomb", "label": "contradicted", "evidence": "source says discovered in 1799 by French soldiers during Napoleon's campaign"},
+      {"text": "It is written in four languages", "label": "contradicted", "evidence": "source says three scripts"},
+      {"text": "It is currently on display in the Louvre", "label": "contradicted", "evidence": "source says it is housed in the British Museum"}
+    ]
+  },
+  {
+    "id": "022",
+    "domain": "company",
+    "question": "What is NimbusHealth's main product and target market?",
+    "source": "NimbusHealth is a healthtech company that builds remote patient monitoring software for hospitals managing chronic disease patients. Its core platform, VitalsTrack, integrates with wearable devices to collect blood pressure, glucose, and heart rate data, alerting care teams when readings fall outside safe thresholds. The company primarily sells to mid-sized hospital systems in the United States and reported serving over 60 hospital networks as of last year. NimbusHealth does not currently offer a direct-to-consumer product.",
+    "answer": "NimbusHealth builds remote patient monitoring software called VitalsTrack, which integrates with wearables to track blood pressure, glucose, and heart rate, alerting care teams about abnormal readings. It sells to mid-sized US hospital systems and does not offer a direct-to-consumer product.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "NimbusHealth's VitalsTrack integrates with wearables to track blood pressure, glucose, and heart rate", "label": "supported"},
+      {"text": "It alerts care teams about abnormal readings", "label": "supported"},
+      {"text": "It sells to mid-sized US hospital systems", "label": "supported"},
+      {"text": "It does not offer a direct-to-consumer product", "label": "supported"}
+    ]
+  },
+  {
+    "id": "023",
+    "domain": "company",
+    "question": "What is NimbusHealth's main product and target market?",
+    "source": "NimbusHealth is a healthtech company that builds remote patient monitoring software for hospitals managing chronic disease patients. Its core platform, VitalsTrack, integrates with wearable devices to collect blood pressure, glucose, and heart rate data, alerting care teams when readings fall outside safe thresholds. The company primarily sells to mid-sized hospital systems in the United States and reported serving over 60 hospital networks as of last year. NimbusHealth does not currently offer a direct-to-consumer product.",
+    "answer": "NimbusHealth sells VitalsTrack directly to consumers as a fitness tracking app available on the App Store. The platform focuses on step counting and sleep tracking rather than medical monitoring.",
+    "hallucination_type": "contradiction",
+    "claims": [
+      {"text": "NimbusHealth sells VitalsTrack directly to consumers as a fitness app", "label": "contradicted", "evidence": "source explicitly says NimbusHealth does not offer a direct-to-consumer product, and sells to hospitals instead"},
+      {"text": "The platform focuses on step counting and sleep tracking rather than medical monitoring", "label": "contradicted", "evidence": "source says it tracks blood pressure, glucose, and heart rate for chronic disease management, not step counting or sleep"}
+    ]
+  },
+  {
+    "id": "024",
+    "domain": "science",
+    "question": "What is the difference between weather and climate?",
+    "source": "Weather refers to short-term atmospheric conditions in a specific place at a specific time, such as temperature, precipitation, and wind on a given day. Climate refers to the long-term average of weather patterns in a region, typically measured over periods of 30 years or more. A useful distinction often cited is that climate is what you expect, while weather is what you get. A single cold day does not disprove long-term warming trends, just as a single hot day does not confirm them.",
+    "answer": "Weather is the short-term atmospheric condition at a specific time and place, like today's temperature or rain. Climate is the long-term average of weather patterns over a region, usually measured over 30+ years. A single cold day doesn't disprove a long-term warming trend.",
+    "hallucination_type": "none",
+    "claims": [
+      {"text": "Weather is the short-term atmospheric condition at a specific time and place", "label": "supported"},
+      {"text": "Climate is the long-term average of weather patterns, usually over 30+ years", "label": "supported"},
+      {"text": "A single cold day doesn't disprove a long-term warming trend", "label": "supported"}
+    ]
+  },
+  {
+    "id": "025",
+    "domain": "science",
+    "question": "What is the difference between weather and climate?",
+    "source": "Weather refers to short-term atmospheric conditions in a specific place at a specific time, such as temperature, precipitation, and wind on a given day. Climate refers to the long-term average of weather patterns in a region, typically measured over periods of 30 years or more. A useful distinction often cited is that climate is what you expect, while weather is what you get. A single cold day does not disprove long-term warming trends, just as a single hot day does not confirm them.",
+    "answer": "Weather and climate are essentially the same thing, just measured at different scales of temperature. Climate refers specifically to ocean temperatures, while weather refers to land temperatures. Scientists measure climate every single day using satellites.",
+    "hallucination_type": "fabricated_elaboration",
+    "claims": [
+      {"text": "Weather and climate are essentially the same thing, just measured at different scales of temperature", "label": "contradicted", "evidence": "source distinguishes them by time span (short-term vs long-term average), not a temperature scale"},
+      {"text": "Climate refers specifically to ocean temperatures, while weather refers to land temperatures", "label": "unsupported", "evidence": "source makes no land/ocean distinction"},
+      {"text": "Scientists measure climate every single day using satellites", "label": "unsupported", "evidence": "source does not mention measurement methods or frequency"}
+    ]
+  }
+]

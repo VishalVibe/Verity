@@ -1,0 +1,20 @@
+.agents/
+.uv-cache/
+.uv-python/
+checkpoints/
+eval/checkpoints/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+report_*.html
+
+# Angular (for when we add it)
+node_modules/
+dist/
+.angular/
+
+# OS
+.DS_Store
+Thumbs.db

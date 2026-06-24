@@ -1,0 +1,16 @@
+# Required for retrieval (TF-IDF):
+scikit-learn>=1.3.0
+numpy>=1.24.0
+
+# API and local development:
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pytest>=8.0.0
+
+# Uncomment whichever LLM provider you plan to use for claim extraction:
+# anthropic>=0.39.0
+# openai>=1.50.0
+
+# For dense/semantic retrieval (week 3-4), uncomment one:
+# sentence-transformers>=3.0.0   # local, free, offline
+# (OpenAI embeddings use the openai package above)
