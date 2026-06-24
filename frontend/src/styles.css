@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, 'Segoe UI', Inter, sans-serif;
+  background: #F7F5F1;
+  margin: 0;
+}
