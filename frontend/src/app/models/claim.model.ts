@@ -7,13 +7,17 @@ export interface ClaimResult {
 }
 
 export interface VerifyResponse {
-  claims: ClaimResult[];
-  stats: {
+  run_id: number;
+  status: string;
+  error?: string;
+  claims?: ClaimResult[];
+  stats?: {
     total: number;
     supported: number;
     contradicted: number;
     unsupported: number;
   };
+  remaining_quota: number;
 }
 
 export interface VerifyRequest {

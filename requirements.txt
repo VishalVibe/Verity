@@ -6,6 +6,12 @@ numpy>=1.24.0
 fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
 pytest>=8.0.0
+sentry-sdk[fastapi]>=2.0.0
+httpx>=0.25.0
+celery>=5.3.0
+redis>=5.0.0
+fpdf2>=2.7.0
+
 
 # Uncomment whichever LLM provider you plan to use for claim extraction:
 # anthropic>=0.39.0

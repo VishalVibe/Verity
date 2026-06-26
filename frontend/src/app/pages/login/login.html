@@ -1,0 +1,72 @@
+<div class="min-h-screen bg-[#F7F5F1] flex items-center justify-center px-4">
+  <div class="w-full max-w-sm">
+
+    <!-- logo -->
+    <div class="flex flex-col items-center mb-8 gap-3">
+      <div class="relative w-12 h-12 flex items-center justify-center">
+        <span class="absolute w-12 h-12 rounded-full border border-[#534AB7] opacity-30 animate-ping" style="animation-duration:2.4s"></span>
+        <span class="absolute w-12 h-12 rounded-full border border-[#534AB7] opacity-15 animate-ping" style="animation-duration:2.4s;animation-delay:0.8s"></span>
+        <span class="w-3 h-3 rounded-full bg-[#534AB7] relative z-10"></span>
+      </div>
+      <div class="text-center">
+        <h1 class="text-xl font-medium text-gray-900 tracking-tight">Verity</h1>
+        <p class="text-xs text-gray-400 mt-0.5">Hallucination & citation checker</p>
+      </div>
+    </div>
+
+    <!-- card -->
+    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+      <h2 class="text-sm font-medium text-gray-700 mb-5">Sign in to your account</h2>
+
+      <div class="flex flex-col gap-3">
+        <div>
+          <label class="text-[10px] font-medium text-gray-400 uppercase tracking-widest block mb-1">Email</label>
+          <input
+            [(ngModel)]="email"
+            type="email"
+            placeholder="you@example.com"
+            class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm
+                   text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#534AB7]/20
+                   focus:border-[#534AB7]/40 placeholder-gray-300"/>
+        </div>
+
+        <div>
+          <label class="text-[10px] font-medium text-gray-400 uppercase tracking-widest block mb-1">Password</label>
+          <input
+            [(ngModel)]="password"
+            type="password"
+            placeholder="••••••••"
+            (keyup.enter)="submit()"
+            class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm
+                   text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#534AB7]/20
+                   focus:border-[#534AB7]/40 placeholder-gray-300"/>
+        </div>
+
+        <p *ngIf="error" class="text-xs text-red-600 bg-red-50 rounded-lg px-3 py-2">
+          {{ error }}
+        </p>
+
+        <button
+          (click)="submit()"
+          [disabled]="loading || !email || !password"
+          class="w-full bg-[#534AB7] text-white rounded-lg py-2.5 text-sm font-medium
+                 flex items-center justify-center gap-2 mt-1 transition-opacity
+                 disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90">
+          <span *ngIf="!loading">Sign in</span>
+          <span *ngIf="loading" class="flex items-center gap-2">
+            <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+            </svg>
+            Signing in...
+          </span>
+        </button>
+      </div>
+
+      <p class="text-xs text-center text-gray-400 mt-4">
+        Don't have an account?
+        <a routerLink="/register" class="text-[#534AB7] font-medium hover:underline">Register</a>
+      </p>
+    </div>
+  </div>
+</div>
