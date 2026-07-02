@@ -28,7 +28,7 @@ if sentry_dsn:
         profiles_sample_rate=1.0,
     )
 
-from fastapi import FastAPI, HTTPException, Depends, Request
+from fastapi import FastAPI, HTTPException, Depends, Request, BackgroundTasks
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.concurrency import run_in_threadpool
@@ -222,6 +222,7 @@ def _save_run_sync(db: Session, run: models.VerificationRun):
 @app.post("/verify", response_model=VerifyResponse)
 async def verify(
     req: VerifyRequest,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user),
 ):
@@ -253,8 +254,9 @@ async def verify(
     db.commit()
     db.refresh(run)
 
-    # 2. Trigger Celery background task
-    verify_claims_task.delay(run.id, req.extractor)
+    # 2. Trigger background task via FastAPI BackgroundTasks
+    background_tasks.add_task(verify_claims_task, run.id, req.extractor)
+
 
     # 3. Compute remaining quota
     remaining = max(0, 10 - (run_count + 1))
