@@ -4,6 +4,12 @@ A tool that checks whether claims in an AI-generated answer are actually
 supported by the source documents it was supposed to be grounded in —
 catching hallucinations in RAG (Retrieval-Augmented Generation) outputs.
 
+## Live Deployments
+
+- **Frontend App (Vercel):** [https://verity-murex.vercel.app](https://verity-murex.vercel.app)
+- **Backend API (Render):** [https://verity-api-cz28.onrender.com](https://verity-api-cz28.onrender.com)
+
+
 ## Results
 
 | Method | Overall Accuracy | Supported Recall | Contradicted Recall | Unsupported Recall |
