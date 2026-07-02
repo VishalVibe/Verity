@@ -5,7 +5,7 @@ import { VerifyRequest, VerifyResponse } from '../models/claim.model';
 
 @Injectable({ providedIn: 'root' })
 export class VerifyService {
-  private apiUrl = 'http://localhost:8000';
+  private apiUrl = 'https://verity-api-cz28.onrender.com';
 
   constructor(private http: HttpClient) {}
 
