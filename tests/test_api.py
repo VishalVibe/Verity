@@ -45,9 +45,19 @@ def clean_db_tables():
         login_limiter.requests.clear()
 
 
+def test_root_endpoint():
+    with TestClient(app) as client:
+        response = client.get("/")
+        assert response.status_code == 200
+        data = response.json()
+        assert "message" in data
+        assert data["status"] == "running"
+
+
 def test_health_endpoint():
     with TestClient(app) as client:
         response = client.get("/health")
+
         assert response.status_code == 200
         data = response.json()
         assert data["status"] == "ok"

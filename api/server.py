@@ -164,7 +164,15 @@ def _get_provider(name: str):
 
 from sqlalchemy import text
 
+@app.get("/")
+def root():
+    return {
+        "message": "Welcome to the Verity API. Visit /docs for interactive API documentation.",
+        "status": "running"
+    }
+
 @app.get("/health")
+
 def health(db: Session = Depends(get_db)):
     try:
         # Ping the database
